@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package pd_auth;
+option go_package = "./pd_auth_client";
+
+service AuthClientService {
+  rpc CheckToken (CheckTokenRequest) returns (CheckTokenResponse);
+  rpc UserById   (ByUserIdRequest)   returns (OneUserResponse);
+}
+
+message ByUserIdRequest {
+  string user_id = 1;
+}
+
+message OneUserResponse {
+  User user = 1;
+}
+
+message CheckTokenRequest {
+  string token = 1;
+}
+
+message CheckTokenResponse {
+  User user = 1;
+  Session session = 2;
+}
+
+message Session {
+  string id = 1;
+  string device_name = 2;
+  string device_id = 3;
+  string mac_address = 4;
+  int64 created_at = 5;
+  int64 timestamp = 6;
+  string ip = 7;
+}
+
+message User {
+  string id = 1;
+  string email = 2;
+  string phone = 3;
+  bool phone_status = 4;
+  bool email_status = 5;
+  string avatar = 6;
+  string first_name = 7;
+  string last_name = 8;
+  string created_at = 9;
+  string gender = 10;
+  int32 age = 11;
+  bool status = 12;
+  bool is_agent = 13;
+  string username = 14;
+}

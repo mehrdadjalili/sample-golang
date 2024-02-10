@@ -1,0 +1,20 @@
+# invalid
+InvalidWalletStatus = "invalid wallet status"
+InvalidAdminStatus = "invalid admin status"
+InvalidBookStatus = "invalid book status"
+InvalidGender = "invalid gender"
+InvalidRole = "invalid role"
+InvalidPassword = "invalid password"
+InvalidToken = "invalid token"
+InvalidDeliveryChannel = "invalid delivery channel"
+InvalidNotificationStatus = "invalid notification status"
+
+# general
+DBError = "error is exist"
+GeneralError = "error is exist"
+ParseQueryError = "parse query error"
+NotPermission = "not have permission to access"
+
+# user
+UserNotFound = "user not found"
+EmailOrPasswordIsIncorrect = "email or password is incorrect"

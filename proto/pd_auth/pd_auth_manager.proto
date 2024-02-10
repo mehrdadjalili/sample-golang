@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+package pd_auth;
+option go_package = "./pd_auth_manager";
+
+service AuthManagerService {
+  rpc UserList    (UserListRequest)    returns (UserListResponse);
+  rpc UserById    (ByIdRequest)        returns (UserByIdResponse);
+  rpc EditUser    (EditUserRequest)    returns (RegularResponse);
+  rpc CountByRole (CountByRoleRequest) returns (CountByRoleResponse);
+  rpc Count       (NullRequest)        returns (CountResponse);
+  rpc Statistics  (NullRequest)        returns (StatisticsResponse);
+}
+
+message ByIdRequest {
+  string id = 1;
+}
+
+message UserListRequest {
+  string search = 1;
+  string sort = 2;
+  int32 page = 3;
+  int32 per_page = 4;
+}
+
+message NullRequest {}
+
+message EditUserRequest {
+  string id = 1;
+  UserRequest user = 2;
+}
+
+message UserRequest {
+  string id = 1;
+  string email = 2;
+  string phone = 3;
+  bool phone_status = 4;
+  bool email_status = 5;
+  string avatar = 6;
+  string first_name = 7;
+  string last_name = 8;
+  string created_at = 9;
+  string gender = 10;
+  int32 age = 11;
+  bool status = 12;
+  bool is_agent = 13;
+  string username = 14;
+}
+
+message UserResponse {
+  string id = 1;
+  string email = 2;
+  string phone = 3;
+  bool phone_status = 4;
+  bool email_status = 5;
+  string avatar = 6;
+  string first_name = 7;
+  string last_name = 8;
+  string created_at = 9;
+  string gender = 10;
+  int32 age = 11;
+  bool status = 12;
+  bool is_agent = 13;
+  string username = 14;
+}
+
+message CountByRoleRequest {
+  bool is_agent = 1;
+}
+
+message RegularResponse {
+   string message = 1;
+}
+
+message UserListResponse {
+   int64 count = 1;
+   repeated UserResponse users = 2;
+}
+
+message UserByIdResponse {
+  UserResponse user = 1;
+}
+
+message CountByRoleResponse {
+ int64 count = 1;
+}
+
+message CountResponse {
+  int64 count = 1;
+}
+
+message StatisticsResponse {
+  int64 count = 1;
+  int64 active = 2;
+  int64 inactive = 3;
+  int64 registered_by_email = 4;
+  int64 registered_by_phone = 5;
+  int64 disabled = 6;
+}

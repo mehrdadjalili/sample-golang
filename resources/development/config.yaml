@@ -1,0 +1,19 @@
+server:
+  name: "auth-service"
+  port: 8080
+  grpc_client_port: 10002
+  grpc_manager_port: 10003
+  client_access_token: "51da995c-7b7f-4e47-837e-40f21785eee3"
+  manager_access_token: "0c4953ca-a419-46c5-8247-9f6d6291480e"
+database:
+  mongodb:
+    database: "auth_service"
+    url: ""
+  redis:
+    server: ""
+    password: ""
+    database: 1
+i18n:
+  bundle_path: "/app/resources/messages/i18n"
+encryption:
+  key: "2F414F4428422B4B6250651328566A5870337335163S79244226452748404D63"

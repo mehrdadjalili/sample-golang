@@ -1,0 +1,20 @@
+# invalid
+InvalidWalletStatus = "وضعیت کیف پول نامعتبر است"
+InvalidAdminStatus = "وضعیت مدیر نامعتبر است"
+InvalidBookStatus = "وضعیت کتاب نامعتبر است"
+InvalidGender = "جنسیت نامعتبر است"
+InvalidRole = "نقش نامعتبر است"
+InvalidPassword = "رمز عبور نامعتبر است"
+InvalidToken = "توکن نامعتبر است"
+InvalidDeliveryChannel = "کانال تحویل نامعتبر است"
+InvalidNotificationStatus = "وضعیت اطلاع نامعتبر است"
+
+# general
+DBError = "خطایی وجود دارد"
+GeneralError = "خطایی وجود دارد"
+ParseQueryError = "خطای پارامترهای ورودی"
+NotPermission = "اجازه دسترسی ندارید"
+
+# user
+UserNotFound = "کاربر مورد نظر یافت نشد"
+EmailOrPasswordIsIncorrect = "ایمیل یا کلمه عبور اشتباه است"
